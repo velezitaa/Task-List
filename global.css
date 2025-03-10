@@ -1,0 +1,33 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    font-size: 1rem;
+    margin:0;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    color-scheme: light dark;
+    --bg-color: light-dark(white, black);
+    --border-color: light-dark(#d6d9dc, #515354);
+    --primary-color: light-dark(#6366f1, #c2c3e8);
+    --primary-active-color: light-dark(#4142a1, #dcdde4);
+    --text-color: light-dark(black, white);
+    --btn-text-color: light-dark(white, black);
+    --width-page: 80rem;
+
+    --text-color-task-list: light-dark(#f4f4f4,black);
+    --bg-color-input-task: light-dark(white,#f4f4f4);
+    --helper-text-color: light-dark(#7a0505,#ad3636);
+    --delete-btn-color: light-dark(#ef0505,#c30404);
+    --delete-btn-hover-color: light-dark(#c30404,#ef0505);
+    --check-btn-color: light-dark(#6ab106,#269600);
+    --check-btn-hover-color: light-dark(#269600,#6ab106);
+}
