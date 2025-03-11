@@ -1,139 +1,311 @@
 
 
-body{
-    padding-top: 4rem;
+body {
+    padding: 1rem;
     height: 100vh;
     background-color: var(--bg-color);
-}
-
-/* Navegacion */
-#nav {
-   
-    padding: 0 1rem;
-    height: 4rem;
-    border-bottom: 1px solid var(--border-color);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-color);
-}
-
-#nav-container {
-    height: inherit;
-    max-width: var(--width-page);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--primary-color);
-}
-
-#nav-title {
-    font-weight: 700;
-    font-size: 2rem;
-}
-
-#nav-button {
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    color: var(--btn-text-color);
-    background-color: var(--primary-color);
-    transition: all 0.175s ease-in-out;
-}
-
-#nav-button:active {
-    background-color: var(--primary-active-color)
-}
-
-#nav-links-container {
-    display: none;
-    gap: 1rem;
-}
-
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.nav-link:hover {
-    text-decoration: underline;
-}
-
-#main {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: var(--width-page);
-    margin: 0 auto;
-    padding: 0 1rem;
-    gap: 1rem;
 }
 
+/* Titulo "Lista de Tareas" */
 #main-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-color);    
 }
 
-#main-desc-container {
+#main {
+   background-color: var(--primary-color);
+   height: 80%;
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   max-width: var(--width-page);
+   margin-top: 2rem;
+   padding: 20px;
+   padding-top: 5px;
+   gap: 1rem;
+   border-radius: 5px;
+   box-shadow: 0 0 10px gray;
+   position: relative;
+}
+
+#main-form {
+    width: 85%;
+    margin: 0 auto;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto "Tarea" */
+label {
+    color: var(--text-color-task-list);
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+/* Contenedor del Input */
+.main-form-input-container {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+
 }
 
-#main-desc-text {
-    text-align: justify;
+/* Barra para escribir */
+#task-input {
+    background-color:var(--bg-color-input-task);
+    width: 100%;
+    padding: 10px;
+    /* padding-right: 200px; */
+    gap: 10px;
+    margin: 5px;
+    border-radius: 7px;
+    display: block;
+    margin-right: 15rem;
+
 }
 
-#main-desc-button {
-    background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 0.375rem;
-    color: var(--btn-text-color);
+/* Texto Error */
+.main-form-helper-text {
+    background-color: #c2c3e8;
+    color: var(--helper-text-color);
+    border-radius: 5px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Boton Crear */
+#main-form-button {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    padding: 0rem;
+    border-radius: 2rem;
     cursor: pointer;
-    text-decoration: none;
+    color: var(--bg-color);
+    background-color: var(--primary-color);  
+     
 }
 
-#main-desc-button:hover {
-    background-color: var(--primary-active-color) 
+#main-form-button:active {
+    background-color: var(--primary-active-color);
 }
 
-@media (min-width: 768px) {
-    #nav-links-container {
-        display: flex;
-    }
+/* Lista Contenedor */
+#task-list {
+    height: inherit;
+    margin-bottom:20px ;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    list-style: none;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+    border-radius: 7px;
+}
 
-    #nav-button {
-        display: none;
+/* Contenedor Tarea */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    margin: 0.5rem auto;
+}
+
+/* Boton Eliminar */
+.task-item-delete-button {
+    width: 7rem;
+    height: 4rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    color: var(--btn-text-color);
+    background-color: var(--delete-btn-color);
+    transition: all 0.175s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.task-item-delete-button:hover {
+    background-color: var(--delete-btn-hover-color);
+}
+
+/* Tarea Tachada */
+#task-item-line-through-text {
+    color: gray;
+    text-decoration: line-through;
+}
+
+/* Texto de las Tareas */
+.task-item-text {
+    color: black;
+    word-wrap: break-word; /*no se ejecuta*/
+}
+
+/* Boton Hecho */
+.task-item-check-button {
+    width: 7rem;
+    height: 4rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    color: var(--btn-text-color);
+    background-color: var(--check-btn-color);
+    transition: all 0.175s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.task-item-check-button:hover {
+    background-color: var(--check-btn-hover-color);
+}
+
+/* Contadores de Tareas */
+#task-counters {
+  
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0.3rem auto;
+    padding: 6px;
+    gap: 3rem;
+    background-color:#f4f4f4;
+    color: black;
+    border-radius: 0.375rem;
+}
+
+#task-counters-total{
+    padding-left: 1rem;
+    font-weight: 600;
+}
+
+#task-counters-completed{
+    font-weight: 600;
+}
+
+#task-counters-incompleted {
+    padding-right: 1rem;
+    font-weight: 600;
+
+}
+
+@media (min-width: 320px) and (max-width: 520px) {
+
+    #main-title {
+        margin-left: 1rem;
+        margin-top: 3rem;
+        text-align: center;
+        width: 100%;
     }
 
     #main {
         width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
+
+    #main-form {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #main-form-button {
+        /* margin-right: 0rem; */
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .task-item-check-button {
+        width: 12rem;
+        height: 6rem;
+    }
+
+    .task-item-delete-button {
+        width: 12rem;
+        height: 6rem;
+    }
+
+    #task-counters {
+        width: 100%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #task-counters-total{
+        padding-left: 1rem;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    
+    #task-counters-completed{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    
+    #task-counters-incompleted {
+        /* padding-right: 1rem;
+        font-weight: 600; */
+        font-size: 15px;
+    }
+
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 879px) {
+   
     #main {
-        flex-direction: row;
-        width: 60%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    #main-title {
-        width: 50%;
-        font-size: 10rem;
-        text-align: center;
+    #task-input {
+        padding: 5px;
+        padding-right: 0px;
+        margin-right: 10rem;
     }
 
-    #main-desc-container {
-        width: 50%;
+    #main-form-button {
+        width: 3rem;
+    }
+
+    #task-counters {
+        width: 100%;
+        
+    } 
+
+}
+
+@media (min-width: 880px) {
+    #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 70%;
+    }
+
+    .main-form-helper-text {
+        margin-right: 13rem;
     }
 }

@@ -25,7 +25,7 @@
 
     --text-color-task-list: light-dark(#f4f4f4,black);
     --bg-color-input-task: light-dark(white,#f4f4f4);
-    --helper-text-color: light-dark(#7a0505,#ad3636);
+    --helper-text-color: light-dark(#e60000,#ad3636);
     --delete-btn-color: light-dark(#ef0505,#c30404);
     --delete-btn-hover-color: light-dark(#c30404,#ef0505);
     --check-btn-color: light-dark(#6ab106,#269600);
