@@ -1,48 +1,39 @@
 
-
 body {
-    padding: 1rem;
-    /* height: 100vh; */
     background-color: var(--bg-color);
-    align-items: center;
-    display: flex;
+    display: flex; 
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Titulo "Lista de Tareas" */
 #main-title {
+    text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    padding: 1rem;
+    padding: 1.5rem;
     color: var(--primary-color);    
 }
 
 #main {
    background-color: var(--primary-color);
-   /* height: 80%; */
-   /* width: 50%; */
+   max-width: 70%;
+   height: 74vh;
+   margin: 0 auto;
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
-   /* align-items: center; */
-   /* max-width: var(--width-page); */
-   /* margin-top: 2rem; */
-   padding: 1rem;
-   padding-top: 5px;
+   padding: 1.5rem;
    gap: 1rem;
    border-radius: 5px;
    box-shadow: 0 0 10px gray;
-   /* position: relative; */
 }
 
 #main-form {
     width: 100%;
-    /* margin: 0 auto; */
     padding: 1rem;
     gap: 1rem;
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -55,7 +46,6 @@ label {
 
 /* Contenedor del Input */
 .main-form-input-container {
-    /* margin-top: 1rem; */
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -66,32 +56,22 @@ label {
 /* Barra para escribir */
 #task-input {
     background-color:var(--bg-color-input-task);
-    /* width: 100%; */
     padding: 10px;
-    /* padding-right: 200px; */
     gap: 10px;
-    /* margin: 5px; */
     border-radius: 7px;
-    /* margin-right: 15rem; */
 
 }
 
 /* Texto Error */
 .main-form-helper-text {
-    /* background-color: #c2c3e8; */
     color: var(--helper-text-color);
     border-radius: 5px;
-    /* margin-left: 5px; */
     padding-left: 5px;
     padding-right: 5px;
 }
 
 /* Boton Crear */
 #main-form-button {
-    /* width: 4rem; */
-    /* height: 4rem; */
-    /* margin-top: 1rem; */
-    /* margin-right: 2rem; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,14 +95,11 @@ label {
 
 /* Lista Contenedor */
 #task-list {
-    /* height: inherit; */
-    /* margin-bottom:20px ; */
     flex-grow: 1;
     padding: 1rem;
-    
     list-style: none;
     background-color: #f4f4f4;
-    overflow-y: auto;
+    overflow: auto;
     border-radius: 7px;
 }
 
@@ -132,14 +109,10 @@ label {
     gap: 1rem;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    /* margin: 0.5rem auto; */
 }
 
 /* Boton Eliminar */
 .task-item-delete-button {
-    /* width: 7rem; */
-    /* height: 4rem; */
-    /* margin-right: 1rem; */
     padding: 0.5rem;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -175,9 +148,6 @@ label {
 
 /* Boton Hecho */
 .task-item-check-button {
-    /* width: 7rem; */
-    /* height: 4rem; */
-    /* margin-left: 1rem; */
     padding: 0.5rem;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -203,18 +173,15 @@ label {
   
     text-align: center;
     display: flex;
-    justify-content: space-between;
-    /* width: 80%; */
-    /* margin: 0.3rem auto; */
+    justify-content: center;
     padding: 6px;
-    gap: 3rem;
+    gap: 2rem;
     background-color:#f4f4f4;
     color: black;
     border-radius: 0.375rem;
 }
 
 #task-counters-total{
-    padding-left: 1rem;
     font-weight: 600;
 }
 
@@ -223,7 +190,62 @@ label {
 }
 
 #task-counters-incompleted {
-    padding-right: 1rem;
     font-weight: 600;
+
+}
+
+
+@media (min-width: 320px) and (max-width: 424px) {
+    #main {
+        max-width: 94%;
+        height: 81vh;
+    }
+
+    #main-form {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    #task-counters-total {
+        font-size: 0.9rem;
+    }
+
+    #task-counters-completed {
+        font-size: 0.9rem;
+    }
+
+    #task-counters-incompleted {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #main {
+        max-width: 55vh;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 580px) {
+
+    #main-title {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    #task-counters{
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    #main{
+        max-width: 83%;
+        height: 80vh;
+    }
+
+    #main-form {
+        padding: 0;
+    }
 
 }
