@@ -2,46 +2,47 @@
 
 body {
     padding: 1rem;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--bg-color);
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Titulo "Lista de Tareas" */
 #main-title {
     font-size: 3rem;
     font-weight: 700;
+    padding: 1rem;
     color: var(--primary-color);    
 }
 
 #main {
    background-color: var(--primary-color);
-   height: 80%;
-   width: 50%;
+   /* height: 80%; */
+   /* width: 50%; */
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   align-items: center;
-   max-width: var(--width-page);
-   margin-top: 2rem;
-   padding: 20px;
+   /* align-items: center; */
+   /* max-width: var(--width-page); */
+   /* margin-top: 2rem; */
+   padding: 1rem;
    padding-top: 5px;
    gap: 1rem;
    border-radius: 5px;
    box-shadow: 0 0 10px gray;
-   position: relative;
+   /* position: relative; */
 }
 
 #main-form {
-    width: 85%;
-    margin: 0 auto;
-    gap: 10px;
+    width: 100%;
+    /* margin: 0 auto; */
+    padding: 1rem;
+    gap: 1rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    /* flex-direction: row; */
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -54,42 +55,46 @@ label {
 
 /* Contenedor del Input */
 .main-form-input-container {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
+    gap: 0.5rem;
 
 }
 
 /* Barra para escribir */
 #task-input {
     background-color:var(--bg-color-input-task);
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
     /* padding-right: 200px; */
     gap: 10px;
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 7px;
-    display: block;
-    margin-right: 15rem;
+    /* margin-right: 15rem; */
 
 }
 
 /* Texto Error */
 .main-form-helper-text {
-    background-color: #c2c3e8;
+    /* background-color: #c2c3e8; */
     color: var(--helper-text-color);
     border-radius: 5px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     padding-left: 5px;
     padding-right: 5px;
 }
 
 /* Boton Crear */
 #main-form-button {
-    width: 4rem;
-    height: 4rem;
-    margin-top: 1rem;
-    margin-right: 2rem;
+    /* width: 4rem; */
+    /* height: 4rem; */
+    /* margin-top: 1rem; */
+    /* margin-right: 2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0rem;
     border-radius: 2rem;
     cursor: pointer;
@@ -102,12 +107,18 @@ label {
     background-color: var(--primary-active-color);
 }
 
+
+#main-form-button-icon{
+    height: 3rem;
+    width: 3rem;
+}
+
 /* Lista Contenedor */
 #task-list {
-    height: inherit;
-    margin-bottom:20px ;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* height: inherit; */
+    /* margin-bottom:20px ; */
+    flex-grow: 1;
+    padding: 1rem;
     
     list-style: none;
     background-color: #f4f4f4;
@@ -118,17 +129,17 @@ label {
 /* Contenedor Tarea */
 .task-item {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    margin: 0.5rem auto;
+    /* margin: 0.5rem auto; */
 }
 
 /* Boton Eliminar */
 .task-item-delete-button {
-    width: 7rem;
-    height: 4rem;
-    margin-right: 1rem;
+    /* width: 7rem; */
+    /* height: 4rem; */
+    /* margin-right: 1rem; */
     padding: 0.5rem;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -144,6 +155,11 @@ label {
     background-color: var(--delete-btn-hover-color);
 }
 
+.task-item-delete-button-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
 /* Tarea Tachada */
 #task-item-line-through-text {
     color: gray;
@@ -153,14 +169,15 @@ label {
 /* Texto de las Tareas */
 .task-item-text {
     color: black;
+    text-align: justify;
     word-wrap: break-word; /*no se ejecuta*/
 }
 
 /* Boton Hecho */
 .task-item-check-button {
-    width: 7rem;
-    height: 4rem;
-    margin-left: 1rem;
+    /* width: 7rem; */
+    /* height: 4rem; */
+    /* margin-left: 1rem; */
     padding: 0.5rem;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -176,14 +193,19 @@ label {
     background-color: var(--check-btn-hover-color);
 }
 
+.task-item-check-button-icon {
+        height: 2rem;
+        width: 2rem;
+}
+
 /* Contadores de Tareas */
 #task-counters {
   
     text-align: center;
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: 0.3rem auto;
+    /* width: 80%; */
+    /* margin: 0.3rem auto; */
     padding: 6px;
     gap: 3rem;
     background-color:#f4f4f4;
@@ -204,108 +226,4 @@ label {
     padding-right: 1rem;
     font-weight: 600;
 
-}
-
-@media (min-width: 320px) and (max-width: 520px) {
-
-    #main-title {
-        margin-left: 1rem;
-        margin-top: 3rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    #main {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    #main-form {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    #main-form-button {
-        /* margin-right: 0rem; */
-        width: 2.5rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .task-item-check-button {
-        width: 12rem;
-        height: 6rem;
-    }
-
-    .task-item-delete-button {
-        width: 12rem;
-        height: 6rem;
-    }
-
-    #task-counters {
-        width: 100%;
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #task-counters-total{
-        padding-left: 1rem;
-        font-weight: 600;
-        font-size: 15px;
-    }
-    
-    #task-counters-completed{
-        font-weight: 600;
-        font-size: 15px;
-    }
-    
-    #task-counters-incompleted {
-        /* padding-right: 1rem;
-        font-weight: 600; */
-        font-size: 15px;
-    }
-
-}
-
-@media (max-width: 879px) {
-   
-    #main {
-        width: 95%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    #task-input {
-        padding: 5px;
-        padding-right: 0px;
-        margin-right: 10rem;
-    }
-
-    #main-form-button {
-        width: 3rem;
-    }
-
-    #task-counters {
-        width: 100%;
-        
-    } 
-
-}
-
-@media (min-width: 880px) {
-    #main {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 70%;
-    }
-
-    .main-form-helper-text {
-        margin-right: 13rem;
-    }
 }
