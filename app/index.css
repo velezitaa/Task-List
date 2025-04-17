@@ -68,6 +68,7 @@ label {
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    display: none; 
 }
 
 /* Boton Crear */
@@ -75,6 +76,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
     padding: 0rem;
     border-radius: 2rem;
     cursor: pointer;
@@ -122,6 +124,7 @@ label {
     justify-content: center;
     align-items: center;
     display: flex;
+    outline: none;
 }
 
 .task-item-delete-button:hover {
@@ -137,13 +140,15 @@ label {
 #task-item-line-through-text {
     color: gray;
     text-decoration: line-through;
+    padding: 0.5rem;
 }
 
 /* Texto de las Tareas */
 .task-item-text {
     color: black;
     text-align: justify;
-    word-wrap: break-word; /*no se ejecuta*/
+    /* word-wrap: break-word; no se ejecuta */
+    padding: 0.5rem;
 }
 
 /* Boton Hecho */
@@ -157,6 +162,7 @@ label {
     justify-content: center;
     align-items: center;
     display: flex;
+    outline: none;
 }
 
 .task-item-check-button:hover {
