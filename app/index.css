@@ -62,13 +62,31 @@ label {
 
 }
 
+#task-input:focus{
+    outline: none;
+  }
+
+/* Input válido e inválido */
+.input-valid {
+    outline: 1px solid green;
+}
+  
+.input-invalid {
+outline : 1px solid red;
+}
+
 /* Texto Error */
 .main-form-helper-text {
     color: var(--helper-text-color);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    display: none; 
+    display: none; /*esto es NUEVO*/
+}
+
+/* Mostrar texto de error */
+.show-helper-text{
+    display: block;
 }
 
 /* Boton Crear */
@@ -89,6 +107,10 @@ label {
     background-color: var(--primary-active-color);
 }
 
+#main-form-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 #main-form-button-icon{
     height: 3rem;
@@ -131,23 +153,23 @@ label {
     background-color: var(--delete-btn-hover-color);
 }
 
-.task-item-delete-button-icon {
+.delete-button-icon {
     height: 2rem;
     width: 2rem;
-}
-
-/* Tarea Tachada */
-#task-item-line-through-text {
-    color: gray;
-    text-decoration: line-through;
-    padding: 0.5rem;
 }
 
 /* Texto de las Tareas */
 .task-item-text {
     color: black;
     text-align: justify;
-    /* word-wrap: break-word; no se ejecuta */
+    word-wrap: break-word; /*no se ejecuta*/
+    padding: 0.5rem;
+}
+
+/* Tarea Tachada */
+#task-item-line-through-text {
+    color: gray;
+    text-decoration: line-through;
     padding: 0.5rem;
 }
 
@@ -163,16 +185,20 @@ label {
     align-items: center;
     display: flex;
     outline: none;
+    height: 3rem;
+    width: 3rem;
 }
 
 .task-item-check-button:hover {
     background-color: var(--check-btn-hover-color);
 }
 
-.task-item-check-button-icon {
-        height: 2rem;
-        width: 2rem;
-}
+/* Le agregué los estilos del icon al check-button */
+
+/* .check-button-icon {
+    height: 2rem;
+    width: 2rem;
+} */
 
 /* Contadores de Tareas */
 #task-counters {
@@ -187,17 +213,10 @@ label {
     border-radius: 0.375rem;
 }
 
-#task-counters-total{
-    font-weight: 600;
-}
-
-#task-counters-completed{
-    font-weight: 600;
-}
-
+#task-counters-total, 
+#task-counters-completed,
 #task-counters-incompleted {
     font-weight: 600;
-
 }
 
 
@@ -212,17 +231,12 @@ label {
         flex-wrap: nowrap;
     }
 
-    #task-counters-total {
-        font-size: 0.9rem;
-    }
-
-    #task-counters-completed {
-        font-size: 0.9rem;
-    }
-
+    #task-counters-total,
+    #task-counters-completed,
     #task-counters-incompleted {
         font-size: 0.9rem;
     }
+
 }
 
 @media (max-width: 425px) {
@@ -254,4 +268,9 @@ label {
         padding: 0;
     }
 
+}
+
+@media (min-width: 768px) {
+    #main {
+        width: 50%;    }
 }
